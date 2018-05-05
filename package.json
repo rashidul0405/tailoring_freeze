@@ -1,0 +1,44 @@
+{
+  "name": "tailoring",
+  "private": true,
+  "description": "Laundry app for my friend",
+  "author": "Md Rashidul Islam <rashidul0405@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "pm2": "pm2",
+    "eslint": "eslint",
+    "precommit": "lint-staged",
+    "format": "prettier --no-semi --write 'packages/*/*.{js,jsx}' 'packages/*/!(node_modules|.next)/**/*.{js,jsx}'",
+    "lint": "eslint .",
+    "start:prod": "pm start pm2.config.js",
+    "start:prod:api": "pm start pm2.config.js --only api",
+    "start:prod:app": "pm start pm2.config.js --only app"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "prettier --no-semi --write",
+      "eslint",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.1.1",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "^0.14.3",
+    "lerna": "^2.10.1",
+    "lint-staged": "^7.0.5",
+    "pm2": "^2.10.3",
+    "prettier": "^1.12.1"
+  }
+}

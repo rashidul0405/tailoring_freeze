@@ -1,0 +1,14 @@
+{
+  "name": "@tailoring/api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Tailor Api",
+  "author": "Md Rashidul Islam <rislam@friflyt.no>",
+  "scripts": {
+    "dev": "PORT=5000 node index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "helmet": "^3.12.0"
+  }
+}
